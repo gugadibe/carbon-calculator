@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculadora de Emissão de CO₂</title>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/414/414927.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <header>
+                <div class="badge">🌱 Sustentabilidade</div>
+                <h1>Calculadora de Emissão de CO₂</h1>
+                <p>
+                    Descubra a pegada de carbono da sua viagem e tome decisões mais
+                    sustentáveis.
+                </p>
+            </header>
+            <form id="carbonForm">
+                <div class="form-group">
+                    <label for="origem">Origem</label>
+                    <input type="text" id="origem" placeholder="Ex: Petrópolis" required />
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" placeholder="Ex: Rio de Janeiro" required />
+                </div>
+                <div class="form-group">
+                    <label for="km">Distância (km)</label>
+                    <input type="number" id="km" min="1" placeholder="Ex: 70" disabled />
+                </div>
+                <div class="manual-distance">
+                    <label class="switch-label">
+                        <input type="checkbox" id="manualKm" />
+                        Informar distância manualmente
+                    </label>
+                </div>
+                <fieldset>
+                    <legend>Tipo de Veículo</legend>
+                    <div class="radio-grid">
+                        <label class="radio-item">
+                            <input type="radio" name="veiculo" value="0.08" required />
+                            🏍️ Moto
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="veiculo" value="0.19" />
+                            🚗 Carro
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="veiculo" value="0.10" />
+                            🚌 Ônibus
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="veiculo" value="0.85" />
+                            🚛 Caminhão
+                        </label>
+                    </div>
+                </fieldset>
+                <button type="submit">Calcular Emissão</button>
+            </form>
+            <div id="resultado" class="resultado hidden">
+                <h3>Resultado</h3>
+                <span id="co2" class="co2"> 0 kg CO₂ </span>
+                <p id="mensagem"></p>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>
